@@ -1,0 +1,102 @@
+'use strict';
+
+import { StyleSheet } from 'react-native';
+
+const background = '#ffffff';
+const color = "#080a05";
+const primary = "#334620";
+const secondary = "#d6e4c8";
+const accent = "#8fb668";
+
+module.exports = StyleSheet.create({
+    colors: {
+        backgroundColor: background,
+        color: color,
+        primary: primary,
+        secondary: secondary,
+        accent: accent,
+    },
+    body: {
+        flex:1,
+        justifyContent: 'space-between',
+        fontFamily: 'Nunito-Regular',
+        backgroundColor: background,
+    },
+    main: {
+        flex: 1,
+        fontFamily: 'Nunito-Regular'
+    },
+    bar: {
+        backgroundColor:  secondary,
+        height: 50,
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+
+    title: {
+            fontFamily: 'PTSans-Bold',
+            fontSize: 22.72
+    },
+
+    'regular-18-black': {
+        fontSize: 18,
+        fontFamily: 'Nunito-Regular',
+        color: color
+    },
+
+    'bold-16-black': {
+        fontSize: 16,
+        fontFamily: 'Nunito-Bold',
+        color: color
+    },
+
+    text: {
+        fontFamily: 'Nunito-Regular',
+        fontSize: 16,
+        color: color
+    },
+
+    'regular-10-black': {
+        fontFamily: 'Nunito-Regular',
+        fontSize: 9.6,
+        color: color
+    }
+})
+
+//
+//@media (prefers-color-scheme: dark) {
+//  :root {
+//    --text: #f8faf5;
+//    --background: #000000;
+//    --primary: #ccdfb9;
+//    --secondary: #29371b;
+//    --accent: #8fb668;
+//  }
+//}
+//@import url('https://fonts.googleapis.com/css?family=PT Sans:700|Nunito:400');
+//
+//body {
+//  font-family: 'Nunito';
+//  font-weight: 400;
+//}
+//
+//h1, h2, h3, h4, h5 {
+//  font-family: 'PT Sans';
+//  font-weight: 700;
+//}
+//
+//html {font-size: 100%;} /* 16px */
+//
+//h1 {font-size: 3.366rem; /* 53.92px */}
+//
+//h2 {font-size: 2.525rem; /* 40.32px */}
+//
+//h3 {font-size: 1.894rem; /* 30.24px */}
+//
+//h4 {font-size: 1.421rem; /* 22.72px */}
+//
+//h5 {font-size: 1.066rem; /* 17.12px */}
+//
+//small {font-size: 0.600rem; /* 9.6px */}
