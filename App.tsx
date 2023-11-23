@@ -8,62 +8,47 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
 
-import Account from './assets/icons/account.svg'
-import Mail from './assets/icons/mail.svg'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Pointer from './assets/icons/pointer.svg'
+
+import Home from './screens/home'
+import Count from './screens/count'
+import Footer from './components/footer'
+import Header from './components/header'
+
 const base = require('./colors')
+const Stack = createNativeStackNavigator();
+
 
 function App(): JSX.Element {
 
   return (
-  <View style={base.body}>
-    <View style={[base.bar, styles.navBar]}>
-        <View>
-            <Account
-                width="50"
-                height="50"
-                fill={base.colors.primary}
-            />
-        </View>
-        <View>
-            <Mail
-                width="50"
-                height="50"
-                fill={base.colors.primary}
-            />
-        </View>
-    </View>
-    <View style={base.main}>
-        <Text style={base.text}>I am also here</Text>
-    </View>
-    <View style={[base.bar, styles.footer]}>
-    </View>
-  </View>
+    <NavigationContainer>
+        <Header />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
+        <Stack.Screen name="Count" component={Count} options={{headerShown: false}}/>
+      </Stack.Navigator>
+        <Footer />
+    </NavigationContainer>
+
   );
 }
 
-const styles = StyleSheet.create({
-    navBar: {
-        height: 60,
-        paddingRight: 20,
-        paddingLeft: 20,
-        fontWeight: '600'
-    },
-    navLink:{
-        color: base.colors.primary
-    },
 
-    footer: {
-        height: 60,
-    }
-})
+
+
+
+const styles = StyleSheet.create({
+});
+
 
 
 export default App;
+
