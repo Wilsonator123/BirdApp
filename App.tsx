@@ -31,7 +31,7 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
         <Header />
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Count">
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Stack.Screen name="Count" component={Count} options={{headerShown: false}}/>
       </Stack.Navigator>
