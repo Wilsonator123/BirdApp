@@ -18,7 +18,6 @@ module.exports = StyleSheet.create({
     },
     body: {
         flex:1,
-        justifyContent: 'space-between',
         fontFamily: 'Nunito-Regular',
         backgroundColor: background,
     },
@@ -35,9 +34,29 @@ module.exports = StyleSheet.create({
         alignItems: 'center'
     },
 
+    inputContainer: {
+        width: '80%',
+        marginLeft: "10%",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 5,
+        borderRadius: 10,
+        backgroundColor: primary,
+    },
+
+    searchBar: {
+        width: '87%',
+        alignItems: 'center',
+        color: background,
+        includeFontPadding: false,
+        paddingVertical:3,
+        fontSize: 16,
+    },
+
     title: {
             fontFamily: 'PTSans-Bold',
-            fontSize: 22.72
+            fontSize: 30.24,
+            color: color
     },
 
     'regular-18-black': {
@@ -62,7 +81,15 @@ module.exports = StyleSheet.create({
         fontFamily: 'Nunito-Regular',
         fontSize: 9.6,
         color: color
-    }
+    },
+
+    'bold-40-primary': {
+        fontSize: 40.32,
+        fontFamily: 'PTSans-Bold',
+        color: primary
+    },
+
+
 })
 
 //

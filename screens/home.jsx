@@ -11,10 +11,22 @@ import { useNavigation } from '@react-navigation/native';
 const pointer = require('../assets/pointer1-0.png');
 const base = require('../colors')
 
+
 function App(): JSX.Element {
     const [coordinates, setCoordinates] = React.useState([1.236603,52.635453]);
     const [showCallout, setShowCallout] = React.useState(false);
     const navigator = useNavigation();
+
+    const CustomCallout = () => {
+        return (
+            <Callout onPress={() => navigator.navigate("Count")}>
+                <View>
+                    <Text>Start Count</Text>
+                </View>
+            </Callout>
+        )
+    }
+
 
   return (
       <View style={base.body}>
@@ -31,11 +43,10 @@ function App(): JSX.Element {
                    <Marker
                         coordinate={{latitude: coordinates[1], longitude: coordinates[0]}}
                         draggable
-                        onDragEnd={() => setShowCallout(true)}
-                        onDragStart={() => setShowCallout(false)}
+
                         image={pointer}
                      >
-                     {showCallout && <CustomCallout />}
+                        <CustomCallout />
                     </Marker>
                 </MapView>
 
@@ -44,15 +55,6 @@ function App(): JSX.Element {
   );
 }
 
-const CustomCallout = () => {
-    return (
-        <Callout onPress={() => navigator.navigate("Count")}>
-            <View>
-                <Text>Custom Callout</Text>
-            </View>
-        </Callout>
-    )
-}
 
 const styles = StyleSheet.create({
     map: {
