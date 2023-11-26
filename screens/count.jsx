@@ -5,6 +5,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  Button,
   useColorScheme,
   View,
   Image,
@@ -13,36 +14,62 @@ import {
   Keyboard,
   TouchableOpacity,
   ImageBackground,
+  FlatList,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Bird from '../assets/icons/bird';
 import Camera from '../assets/icons/camera';
-import Remove from '../assets/icons/remove';
-import Add from '../assets/icons/add';
+
+import BirdCounter from '../components/birdCounter';
 
 const base = require("../colors")
 
 const birds =
 [
   {
-     name: "House Sparrow",
-     img: require("../assets/photos/sparrow.png"),
-     count: 0,
+    name: "House Sparrow",
+    img: require("../assets/photos/sparrow.png"),
+    count: 0,
   },
   {
     name: "Blue Tit",
     img: require("../assets/photos/blueTit.png"),
     count: 0,
+  },
+  {
+    name: "Starling",
+    img: require("../assets/photos/starling.png"),
+    count: 0
+  },
+  {
+    name: "Blackbird",
+    img: require("../assets/photos/blackbird.png"),
+    count: 0
+  },
+  {
+    name: "Gold Finch",
+    img: require("../assets/photos/goldFinch.png"),
+    count:0
+  },
+  {
+    name: "Great Tit",
+    img: require("../assets/photos/greatTit.png"),
+    count:0
   }
 
 ]
 
 export default function App() {
-  const [search, setSearch] = React.useState('');
   const navigator = useNavigation();
+  const [search, setSearch] = React.useState('');
+  const [count, setCount] = React.useState(0);
 
-
+  const updateBirdCount = (count) => {
+    setCount(total => {
+      return total+count
+    })
+  }
 
   return (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -65,20 +92,19 @@ export default function App() {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.birdContainer}>
-          {birds.map((bird) => (
-            <View key={bird.name} style={{width: 177, height: 172, justifyContent:"end", alignItems:"end"}} >
-            <ImageBackground source={bird.img} resizeMode="cover" style={styles.birdCount} imageStyle={{opacity: 0.6}}>
-              <Remove width="40" height="40" fill={base.colors.primary}/>
-              <Text style={base['bold-40-primary']}>{bird.count}</Text>
-              <Add width="40" height="40" fill={base.colors.primary}/>
-            </ImageBackground>
-
-            <View style={styles.birdName}>
-              <Text style={base.birdName}>{bird.name}</Text>
-            </View>
-            </View>
-          ))}
+        <FlatList
+        data={birds}
+        renderItem={({item}) => (
+          <BirdCounter bird={item} updateBirdCount={updateBirdCount}/>
+        )}
+        keyExtractor={item => item.name}
+        columnWrapperStyle={styles.birdContainer}
+        numColumns={2}
+        />
+        <View style={styles.submit}>
+          <Button title="submit" disabled={count===0} color={base.colors.primary}>
+          <Text>Submit</Text>
+          </Button>
         </View>
     </View>
   </TouchableWithoutFeedback>
@@ -91,32 +117,39 @@ const styles = StyleSheet.create({
     title: {
         textAlign: "center",
         marginTop: 30,
-        marginBottom: 50,
+        marginBottom: 30,
     },
     birdContainer: {
+      flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-evenly',
-      marginBottom: 20,
-      marginTop: 20,
-    },
-    birdCount: {
-      width: 177,
-      height: 132,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'flex-end',
-      paddingLeft: 10,
-      paddingRight: 10,
-    },
-    birdName: {
-      position: 'relative',
-      width: 177,
-      height: 45,
-      backgroundColor: base.colors.accent,
-      justifyContent: 'center',
       alignItems: 'center',
-      color: base.colors.primary,
-      fontWeight: 'bold',
+      flexWrap: 'wrap',
 
+    },
+    submit: {
+      marginTop: 20,
+      marginBottom: 20,
+      width: "87%",
+      alignSelf: 'center',
     }
+
+
 });
+
+/*
+if(count === 0){
+      setBirdCounts(counts => {
+        const copy = {...counts}
+        delete copy[bird];
+        return copy
+      });
+    }
+    else{
+      setBirdCounts((prevCounts) => ({
+        ...prevCounts,
+        [bird]: count,
+      }));
+    }
+
+    */
