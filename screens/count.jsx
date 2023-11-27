@@ -24,41 +24,7 @@ import Camera from '../assets/icons/camera';
 import BirdCounter from '../components/birdCounter';
 
 const base = require("../colors")
-
-const birds =
-[
-  {
-    name: "House Sparrow",
-    img: require("../assets/photos/sparrow.png"),
-    count: 0,
-  },
-  {
-    name: "Blue Tit",
-    img: require("../assets/photos/blueTit.png"),
-    count: 0,
-  },
-  {
-    name: "Starling",
-    img: require("../assets/photos/starling.png"),
-    count: 0
-  },
-  {
-    name: "Blackbird",
-    img: require("../assets/photos/blackbird.png"),
-    count: 0
-  },
-  {
-    name: "Gold Finch",
-    img: require("../assets/photos/goldFinch.png"),
-    count:0
-  },
-  {
-    name: "Great Tit",
-    img: require("../assets/photos/greatTit.png"),
-    count:0
-  }
-
-]
+const birds = require('../stubs/birds').birds;
 
 export default function App() {
   const navigator = useNavigation();

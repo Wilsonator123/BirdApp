@@ -28,7 +28,7 @@ export default function App( {bird, updateBirdCount} ) {
   }
 
   return (
-    <View key={bird.name} style={{width: 177, height: 172, justifyContent:"end", alignItems:"end", marginBottom: 21}} >
+    <View key={bird.name} style={[ count === 0 ? styles.greyed : "", {width: 177, height: 172, justifyContent:"end", alignItems:"end", marginBottom: 21}]} >
       <ImageBackground source={bird.img} resizeMode="cover" style={styles.birdCount} imageStyle={{opacity: 0.6}}>
         <TouchableOpacity onPress={() => { count > 0 ? updateCount(-1) : updateCount(0)}}>
           <Remove width="40" height="40" fill={base.colors.primary}/>
@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       color: base.colors.primary,
       fontWeight: 'bold',
+    },
 
+    greyed: {
+      opacity: 0.5,
     }
 });
