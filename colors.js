@@ -20,6 +20,7 @@ module.exports = StyleSheet.create({
         flex:1,
         fontFamily: 'Nunito-Regular',
         backgroundColor: background,
+        width: '100%',
     },
     main: {
         flex: 1,
@@ -42,6 +43,7 @@ module.exports = StyleSheet.create({
         paddingHorizontal: 5,
         borderRadius: 10,
         backgroundColor: primary,
+        marginBottom: 10
     },
 
     searchBar: {
