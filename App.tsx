@@ -19,6 +19,7 @@ import Pointer from './assets/icons/pointer.svg'
 
 import Home from './screens/home'
 import Count from './screens/count'
+import Encyclopedia from './screens/encyclopedia'
 import Footer from './components/footer'
 import Header from './components/header'
 
@@ -34,6 +35,8 @@ function App(): JSX.Element {
       <Stack.Navigator initialRouteName="Count">
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Stack.Screen name="Count" component={Count} options={{headerShown: false}}/>
+        <Stack.Screen name="Encyclopedia" component={Encyclopedia} options={{headerShown: false}}/>
+
       </Stack.Navigator>
         <Footer />
     </NavigationContainer>

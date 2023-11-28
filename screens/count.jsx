@@ -23,7 +23,7 @@ import Camera from '../assets/icons/camera';
 
 import BirdCounter from '../components/birdCounter';
 
-const base = require("../colors")
+const base = require("../assets/colors")
 const birds = require('../stubs/birds').birds;
 
 export default function App() {

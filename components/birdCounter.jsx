@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import Remove from '../assets/icons/remove';
 import Add from '../assets/icons/add';
-const base = require('../colors');
+const base = require("../assets/colors")
 
 
 export default function App( {bird, updateBirdCount} ) {
