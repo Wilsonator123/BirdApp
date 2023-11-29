@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 const background = '#ffffff';
 const color = "#080a05";
 const primary = "#334620";
-const secondary = "#d6e4c8";
+const secondary = "#d9e7cb";
 const accent = "#8fb668";
 
 module.exports = StyleSheet.create({
@@ -59,6 +59,12 @@ module.exports = StyleSheet.create({
             fontFamily: 'PTSans-Bold',
             fontSize: 30.24,
             color: color
+    },
+
+    'bold-18-primary': {
+      fontSize: 18,
+      fontFamily: 'PTSans-Bold',
+      color: primary
     },
 
     'regular-18-black': {
@@ -129,3 +135,5 @@ module.exports = StyleSheet.create({
 //h5 {font-size: 1.066rem; /* 17.12px */}
 //
 //small {font-size: 0.600rem; /* 9.6px */}
+
+//https://www.realtimecolors.com/?colors=080a05-ffffff-334620-d9e7cb-709749&fonts=Poppins-Poppins
