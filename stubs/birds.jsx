@@ -9,8 +9,8 @@ export const birds =
     length: "14cm",
     wingspan: "21cm",
     weight: "25g",
-    beak: ["Black"],
-    feathers: ["Brown", "Grey", "White"]
+    beak: ["black"],
+    feathers: ["brown", "grey", "white"]
   },
   {
     name: "Blue Tit",
@@ -20,19 +20,19 @@ export const birds =
     length: "12cm",
     wingspan: "18cm",
     weight: "11g",
-    beak: ["Black"],
-    feathers: ["Grey", "Green", "Blue", "Black", "White", "Yellow"]
+    beak: ["black"],
+    feathers: ["yellow", "green", "blue", "black", "grey", "white",]
   },
   {
     name: "Starling",
     img: require("../assets/photos/starling.png"),
     count: 0,
-    description: "Smaller than Blackbirds, Starlings have a short tail, pointed head and triangular wings. In their breeding plumage, they look black at a distance. When seen closer, they are very glossy with a sheen of purples and greens. Their feathers are also flecked with white and this is especially noticeable in their winter plumage, which is more brown with many bright white spots. Starling flight is fast and direct and they walk and run confidently on the ground. Noisy and social, Starlings spend a lot of the year in flocks. Starlings are fantastic mimics and can make a huge variety of tweets, cheeps, clicks and burrs.",
+    description: "Smaller than Blackbirds, Starlings have a short tail, pointed head and triangular wings. In their breeding plumage, they look black at a distance. When seen closer, they are very glossy with a sheen of purples and greens. Their feathers are also flecked with white and this is especially noticeable in their winter plumage.",
     length: "21cm",
     wingspan: "37cm",
     weight: "75g",
-    beak: ["Yellow", "Black"],
-    feathers: ["Black", "Blue", "Brown", "White", "Green", "Purple"]
+    beak: ["yellow", "black"],
+    feathers: ["green", "blue", "purple", "brown", "black", "white"]
   },
   {
     name: "Blackbird",
@@ -42,8 +42,8 @@ export const birds =
     length: "25cm",
     wingspan: "34cm",
     weight: "100g",
-    beak: ["Brown", "Yellow", "Black", "Orange"],
-    feathers: ["Black", "Brown", "White"]
+    beak: ["orange", "yellow", "brown", "black"],
+    feathers: ["brown", "black", "white"]
   },
   {
     name: "Gold Finch",
@@ -53,8 +53,8 @@ export const birds =
     length: "12cm",
     wingspan: "24cm",
     weight: "16g",
-    beak: ["Black", "Brown", "Red"],
-    feathers: ["Black", "Brown", "White", "Yellow", "Red"]
+    beak: ["red", "brown", "black"],
+    feathers: ["red",  "yellow", "brown", "black", "white"]
   },
   {
     name: "Great Tit",
@@ -64,8 +64,8 @@ export const birds =
     length: "11.5cm",
     wingspan: "21cm",
     weight: "10g",
-    beak: ["Black"],
-    feathers: ["Brown", "Grey", "Black", "White", "Yellow"]
+    beak: ["black"],
+    feathers: ["yellow", "brown", "black", "grey", "white"]
   },
   {
     name: "Long Tailed Tit",
@@ -75,8 +75,8 @@ export const birds =
     length: "14cm",
     wingspan: "19cm",
     weight: "10g",
-    beak: ["Black"],
-    feathers: ["Brown", "Purple", "Black", "White"]
+    beak: ["black"],
+    feathers: ["purple", "brown", "black", "white"]
   },
   {
     name: "Magpie",
@@ -86,8 +86,8 @@ export const birds =
     length: "46cm",
     wingspan: "60cm",
     weight: "250g",
-    beak: ["Black"],
-    feathers: ["Green", "Blue", "Black", "White"]
+    beak: ["black"],
+    feathers: ["green", "blue", "black", "white"]
   },
   {
     name: "Pigeon",
@@ -97,8 +97,8 @@ export const birds =
     length: "42cm",
     wingspan: "77cm",
     weight: "500g",
-    beak: ["Black", "Brown", "Orange"],
-    feathers: ["Grey", "Black", "White", "Brown", "Purple", "Blue"]
+    beak: ["orange", "brown", "black"],
+    feathers: ["blue", "purple", "brown", "black", "grey", "white"]
   },
   {
     name: "Robin",
@@ -108,7 +108,7 @@ export const birds =
     length: "14cm",
     wingspan: "20cm",
     weight: "16g",
-    beak: ["Black"],
-    feathers: ["Brown", "Red", "White", "Grey", "Orange", "Yellow"]
+    beak: ["black"],
+    feathers: ["red", "orange", "yellow", "brown", "grey", "white"]
   }
 ]
