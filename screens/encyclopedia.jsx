@@ -39,7 +39,7 @@ export default function App() {
       <FlatList
       data={birds}
       renderItem={({item}) => (
-        <BirdCard bird={item} />
+        <BirdCard key={item.name}bird={item} />
       )}
       keyExtractor={item => item.name}
       columnWrapperStyle={styles.birdContainer}

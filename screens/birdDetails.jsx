@@ -63,7 +63,7 @@ export default function App( {route} ) {
             <Text style={styles.gridText}>Feathers</Text>
             <View style={styles.feathers}>
               {bird.feathers.map((feather) => (
-                <View style={[styles.circle, {backgroundColor: feather}]}/>
+                <View key={feather} style={[styles.circle, {backgroundColor: feather}]}/>
               ))}
               </View>
           </View>
@@ -71,7 +71,7 @@ export default function App( {route} ) {
             <Text style={styles.gridText}>Beak</Text>
             <View style={styles.feathers}>
             {bird.beak.map((beak) => (
-              <View style={[styles.circle, {backgroundColor: beak}]}/>
+              <View key={beak} style={[styles.circle, {backgroundColor: beak}]}/>
             ))}
             </View>
           </View>
