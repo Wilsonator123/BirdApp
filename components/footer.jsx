@@ -5,7 +5,8 @@ import Ency from '../assets/icons/ency.svg'
 import News from '../assets/icons/news.svg'
 import Line from '../assets/icons/line.svg'
 import { useNavigation } from '@react-navigation/native';
-const base = require('../colors')
+const base = require("../assets/colors")
+
 
 
 

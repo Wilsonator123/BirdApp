@@ -9,7 +9,7 @@ Text,
 import MapView, {Marker, Callout} from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 const pointer = require('../assets/pointer1-0.png');
-const base = require('../colors')
+const base = require('../assets/colors')
 
 
 function App(): JSX.Element {
