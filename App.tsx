@@ -22,6 +22,7 @@ import Count from './screens/count'
 import Encyclopedia from './screens/encyclopedia'
 import BirdDetails from './screens/birdDetails'
 import News from './screens/news'
+import Bit from './screens/bit'
 import Footer from './components/footer'
 import Header from './components/header'
 
@@ -40,6 +41,7 @@ function App(): JSX.Element {
         <Stack.Screen name="Encyclopedia" component={Encyclopedia} options={{headerShown: false}}/>
         <Stack.Screen name="BirdDetails" component={BirdDetails} options={{headerShown: false}}/>
         <Stack.Screen name="News" component={News} options={{headerShown: false}}/>
+        <Stack.Screen name="Bit" component={Bit} options={{headerShown: false}}/>
       </Stack.Navigator>
         <Footer />
     </NavigationContainer>

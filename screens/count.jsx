@@ -52,7 +52,7 @@ export default function App() {
               placeholderTextColor="#f5f5f5"
           />
           <View style={{justifyContent: 'center', position:'relative'}}>
-            <TouchableOpacity style={{justifyContent: 'center', position:'relative'}}>
+            <TouchableOpacity onPress={() => navigator.navigate('Bit')}style={{justifyContent: 'center', position:'relative'}}>
               <Camera width="35" height="40" />
               <Bird width="20" height="20" style={{position: 'absolute', marginLeft: 7, marginTop: 1}}/>
             </TouchableOpacity>
