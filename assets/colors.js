@@ -97,6 +97,35 @@ module.exports = StyleSheet.create({
         color: primary
     },
 
+    'bold-40-white': {
+        fontSize: 40.32,
+        fontFamily: 'PTSans-Bold',
+        color: background
+    },
+
+    'bold-20-white': {
+        fontSize: 22.72,
+        fontFamily: 'PTSans-Bold',
+        color: background
+    },
+
+    'bold-18-white': {
+        fontSize: 17.12,
+        fontFamily: 'PTSans-Bold',
+        color: background
+    },
+
+    'bold-16-white': {
+      fontSize: 16,
+      fontFamily: 'PTSans-Bold',
+      color: background
+    },
+
+    'bold-11-white': {
+      fontSize: 11,
+      fontFamily: 'PTSans-Bold',
+      color: background
+    },
 
 })
 
