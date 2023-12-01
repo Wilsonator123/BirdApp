@@ -23,6 +23,7 @@ import Encyclopedia from './screens/encyclopedia'
 import BirdDetails from './screens/birdDetails'
 import News from './screens/news'
 import Bit from './screens/bit'
+import Account from './screens/account'
 import Footer from './components/footer'
 import Header from './components/header'
 
@@ -35,13 +36,14 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
         <Header />
-      <Stack.Navigator initialRouteName="Count">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Stack.Screen name="Count" component={Count} options={{headerShown: false}}/>
         <Stack.Screen name="Encyclopedia" component={Encyclopedia} options={{headerShown: false}}/>
         <Stack.Screen name="BirdDetails" component={BirdDetails} options={{headerShown: false}}/>
         <Stack.Screen name="News" component={News} options={{headerShown: false}}/>
         <Stack.Screen name="Bit" component={Bit} options={{headerShown: false}}/>
+        <Stack.Screen name="Account" component={Account} options={{headerShown: false}}/>
       </Stack.Navigator>
         <Footer />
     </NavigationContainer>

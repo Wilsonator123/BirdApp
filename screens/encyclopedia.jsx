@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   birdContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        flexWrap: 'wrap',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexWrap: 'wrap',
 
   },
 });
