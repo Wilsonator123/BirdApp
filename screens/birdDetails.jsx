@@ -132,6 +132,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginHorizontal: 20,
     marginBottom: 20,
+    fontFamily: 'Nunito-Regular'
   },
 
   grid: {

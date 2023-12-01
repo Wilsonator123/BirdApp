@@ -61,6 +61,18 @@ module.exports = StyleSheet.create({
             color: color
     },
 
+    'bold-30-white': {
+        fontSize: 30.24,
+        fontFamily: 'Nunito-Bold',
+        color: background
+    },
+
+    'bold-50-white': {
+        fontSize: 53.92,
+        fontFamily: 'PTSans-Bold',
+        color: background
+    },
+
     'bold-18-primary': {
       fontSize: 18,
       fontFamily: 'PTSans-Bold',
@@ -109,11 +121,25 @@ module.exports = StyleSheet.create({
         color: background
     },
 
+    'bold-20-black': {
+        fontSize: 22.72,
+        fontFamily: 'PTSans-Bold',
+        color: color
+    },
+
+
     'bold-18-white': {
         fontSize: 17.12,
         fontFamily: 'PTSans-Bold',
         color: background
     },
+
+    'bold-18-black': {
+        fontSize: 17.12,
+        fontFamily: 'PTSans-Bold',
+        color: color
+    },
+
 
     'bold-16-white': {
       fontSize: 16,
@@ -123,9 +149,24 @@ module.exports = StyleSheet.create({
 
     'bold-11-white': {
       fontSize: 11,
-      fontFamily: 'PTSans-Bold',
+      fontFamily: 'Nunito-Bold',
       color: background
     },
+
+
+    'bold-11-black': {
+      fontSize: 11,
+      fontFamily: 'Nunito-Bold',
+      color: color
+    },
+
+    'regular-11-black': {
+      fontSize: 11,
+      fontFamily: 'Nunito-Regular',
+      color: color
+    },
+
+
 
 })
 
