@@ -153,6 +153,20 @@ module.exports = StyleSheet.create({
       color: primary
     },
 
+    'bold-16-black': {
+      fontSize: 16,
+      fontFamily: 'PTSans-Bold',
+      color: color
+    },
+
+    'regular-16-black': {
+      fontSize: 16,
+      fontFamily: 'Nunito-Regular',
+      color: color
+    },
+
+
+
 
     'bold-11-white': {
       fontSize: 11,

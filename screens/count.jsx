@@ -20,8 +20,10 @@ import { useNavigation } from '@react-navigation/native';
 
 import Bird from '../assets/icons/bird';
 import Camera from '../assets/icons/camera';
+import Tick from '../assets/icons/tick';
 
 import BirdCounter from '../components/birdCounter';
+import Popup from '../components/popUp';
 
 const base = require("../assets/colors")
 const birds = require('../stubs/birds').birds;
@@ -30,6 +32,12 @@ export default function App() {
   const navigator = useNavigation();
   const [search, setSearch] = React.useState('');
   const [count, setCount] = React.useState(0);
+  const [submit, setSubmit] = React.useState(false);
+
+  const toggleSubmit = () => {
+    setSubmit(!submit);
+    navigator.navigate('Home');
+  }
 
   const updateBirdCount = (count) => {
     setCount(total => {
@@ -68,10 +76,26 @@ export default function App() {
         numColumns={2}
         />
         <View style={styles.submit}>
-          <Button title="submit" disabled={count===0} color={base.colors.primary}>
-          <Text>Submit</Text>
+          <Button title="submit" disabled={count===0} color={base.colors.primary} onPress={() => setSubmit(true)}>
+            <Text>Submit</Text>
           </Button>
         </View>
+        {submit &&
+        <Popup close={toggleSubmit}
+        customStyles={{width: 360, height: 200}}>
+        <View style={{alignItems: 'center'}}>
+          <Text style={[base.title, {marginTop: 10}]}>Count submitted!</Text>
+          <Text style={[base['bold-11-black'], {marginTop: 10, textAlign: 'center', width: "60%"}]}>Thank you for submitting your count!
+                We’ll take it from here.   </Text>
+          <TouchableOpacity onPress={toggleSubmit}>
+            <View style={styles.circle} >
+              <Tick width="60" height="60" fill="white"/>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        </Popup>
+        }
     </View>
   </TouchableWithoutFeedback>
 
@@ -98,8 +122,17 @@ const styles = StyleSheet.create({
       marginBottom: 20,
       width: "87%",
       alignSelf: 'center',
-    }
+    },
 
+    circle: {
+      width: 80,
+      height: 80,
+      borderRadius: 80/2,
+      backgroundColor: base.colors.primary,
+      marginTop: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
 
 });
 

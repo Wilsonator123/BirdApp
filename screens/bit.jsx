@@ -17,7 +17,8 @@ import {
 } from 'react-native';
 import { Camera, useCameraDevice, useCameraPermission } from 'react-native-vision-camera';
 import { useNavigation } from '@react-navigation/native';
-
+import Popup from '../components/popUp';
+import BirdFound from '../components/birdFound';
 import CameraIcon from '../assets/icons/bitCamera.svg';
 import Close from '../assets/icons/close.svg';
 const base = require('../assets/colors');
@@ -26,8 +27,14 @@ const base = require('../assets/colors');
 export default function App() {
   const { hasPermission, requestPermission } = useCameraPermission()
   const [showCamera, setShowCamera] = React.useState(false)
+  const [birdFound, setBirdFound] = React.useState(false)
   const navigation = useNavigation();
   requestPermission();
+
+  const togglePopup = () => {
+    setBirdFound(!birdFound)
+    navigation.goBack()
+  }
 
   const device = useCameraDevice('back')
 
@@ -66,11 +73,18 @@ export default function App() {
           <Close width="30" height="30" fill="white"/>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => setShowCamera(false)} style={{position: 'absolute', alignSelf: 'center', bottom: 25}}>
+        <TouchableOpacity onPress={() => {setShowCamera(false); setBirdFound(true)}} style={{position: 'absolute', alignSelf: 'center', bottom: 25}}>
           <View style={{width: 90, height: 90, borderRadius: 50, borderWidth: 5, borderColor: 'white'}} />
         </TouchableOpacity>
 
       </View>
+      }
+      {birdFound && <Popup
+        close={togglePopup}
+        customStyles={{width: 360, height: 175}}
+      >
+        <BirdFound />
+      </Popup>
       }
     </View>
   )
