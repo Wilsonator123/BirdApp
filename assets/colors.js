@@ -147,6 +147,13 @@ module.exports = StyleSheet.create({
       color: background
     },
 
+    'bold-16-primary': {
+      fontSize: 16,
+      fontFamily: 'PTSans-Bold',
+      color: primary
+    },
+
+
     'bold-11-white': {
       fontSize: 11,
       fontFamily: 'Nunito-Bold',

@@ -19,9 +19,16 @@ import { useNavigation } from '@react-navigation/native';
 import Settings from '../assets/icons/settings';
 import Upload from '../assets/icons/upload';
 const base = require("../assets/colors");
+import Popup from '../components/popUp';
+import PhotoView from '../components/photoView';
 
 export default function App() {
   const navigation = useNavigation();
+  const [show, setShow] = React.useState(false);
+
+  const toggle = () => {
+    setShow(!show);
+  }
 
   return (
     <View style={[base.body, styles.container]}>
@@ -60,7 +67,7 @@ export default function App() {
           <View style={styles.month}>
             <Text style={base['bold-20-black']}>Nov' 23</Text>
           </View>
-          <TouchableOpacity style={{width: 120,height: 120}}>
+          <TouchableOpacity style={{width: 120,height: 120}} onPress={toggle}>
             <ImageBackground source={require('../assets/photos/photo.png')} style={styles.image}>
               <View style={styles.textContainer}>
                 <Text style={base['bold-11-black']}>Kingfisher</Text>
@@ -70,6 +77,18 @@ export default function App() {
         </View>
 
       </View>
+      {show &&
+      <Popup close={toggle}
+      customStyles={{
+        height: 500,
+        width: 360,
+        borderBottomRightRadius: 25,
+        borderBottomLeftRadius: 25,
+        pointerEvents: 'none'
+      }} >
+        <PhotoView />
+      </Popup>
+      }
     </View>
   );
 }
