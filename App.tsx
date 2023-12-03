@@ -26,6 +26,7 @@ import Bit from './screens/bit'
 import Account from './screens/account'
 import Footer from './components/footer'
 import Header from './components/header'
+import Heatmap from './screens/heatmap'
 
 const base = require('./colors')
 const Stack = createNativeStackNavigator();
@@ -36,7 +37,7 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
         <Header />
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="HeatMap">
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Stack.Screen name="Count" component={Count} options={{headerShown: false}}/>
         <Stack.Screen name="Encyclopedia" component={Encyclopedia} options={{headerShown: false}}/>
@@ -44,6 +45,7 @@ function App(): JSX.Element {
         <Stack.Screen name="News" component={News} options={{headerShown: false}}/>
         <Stack.Screen name="Bit" component={Bit} options={{headerShown: false}}/>
         <Stack.Screen name="Account" component={Account} options={{headerShown: false}}/>
+        <Stack.Screen name="HeatMap" component={Heatmap} options={{headerShown: false}}/>
       </Stack.Navigator>
         <Footer />
     </NavigationContainer>
