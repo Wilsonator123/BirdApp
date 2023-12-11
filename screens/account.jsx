@@ -21,6 +21,7 @@ import Upload from '../assets/icons/upload';
 const base = require("../assets/colors");
 import Popup from '../components/popUp';
 import PhotoView from '../components/photoView';
+import SettingView from '../components/settings'
 
 export default function App() {
   const navigation = useNavigation();
@@ -30,15 +31,35 @@ export default function App() {
     setShow(!show);
   }
 
+  const [showSettings, setShowSettings] = React.useState(false);
+
+    const toggleSettings = () => {
+      setShowSettings(!showSettings);
+    }
+
   return (
     <View style={[base.body, styles.container]}>
       <TouchableOpacity>
-        <Settings width="35" height="35" fill="white" style={{position: 'absolute', alignSelf: 'flex-end', right:10, top:10}}/>
+        <Settings width="35" height="35" fill="white" style={{position: 'absolute', alignSelf: 'flex-end', right:10, top:10}} onPress={toggleSettings}/>
       </TouchableOpacity>
+
+            {showSettings &&
+            <Popup close={toggleSettings}
+            customStyles={{
+              height: 500,
+              width: 360,
+              borderBottomRightRadius: 25,
+              borderBottomLeftRadius: 25,
+              pointerEvents: 'none'
+            }} >
+              <SettingView />
+            </Popup>
+            }
+
       <View style={styles.userIcon}>
-        <Text style={base['bold-50-white']}> W </Text>
+        <Text style={base['bold-50-white']}> N </Text>
       </View>
-      <Text style={[base['bold-30-white'], {marginBottom: 10}]}> @George Wilson </Text>
+      <Text style={[base['bold-30-white'], {marginBottom: 10}]}> @George Nuts </Text>
 
       <View style={styles.box}>
         <View style={styles.innerBox}>
