@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -22,6 +22,7 @@ const base = require("../assets/colors");
 import Popup from '../components/popUp';
 import PhotoView from '../components/photoView';
 import SettingView from '../components/settings'
+import { ColorSchemeContext } from '../components/colorSchemeContext';
 
 export default function App() {
   const navigation = useNavigation();
@@ -36,7 +37,10 @@ export default function App() {
     const toggleSettings = () => {
       setShowSettings(!showSettings);
     }
-
+const { isDarkMode, toggleColorScheme } = useContext(ColorSchemeContext);
+  const textStyle = {
+    color: isDarkMode ? '#FFFFFF' : '#000000',
+  };
   return (
     <View style={[base.body, styles.container]}>
       <TouchableOpacity>
@@ -60,7 +64,7 @@ export default function App() {
         <Text style={base['bold-50-white']}> N </Text>
       </View>
       <Text style={[base['bold-30-white'], {marginBottom: 10}]}> @George Nuts </Text>
-
+       <Text style={textStyle}>Working</Text>
       <View style={styles.box}>
         <View style={styles.innerBox}>
           <Text style={[base['bold-18-black'], {marginBottom: 10}]}> Submissions </Text>
@@ -75,7 +79,6 @@ export default function App() {
           <Text style={[base['bold-18-black'], {marginBottom: 10}]}> 15 Jan 2023 </Text>
         </View>
       </View>
-
       <View style={styles.photoGallery}>
         <View style={styles.header}>
           <Text style={[base['bold-30-white'], {textDecorationLine: 'underline'}]}>Your Photos</Text>

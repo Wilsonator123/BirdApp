@@ -88,12 +88,11 @@ const styles = StyleSheet.create({
     backgroundColor: base.colors.white,
   },
   Smallcontainer:{
-    width: 300,
-    left:30,
-    height: 430,
-  borderBottomRightRadius: 25,
-    borderBottomLeftRadius: 25,
-    backgroundColor: "#709749",
+    width: 360,
+    height: 450,
+  borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    backgroundColor: base.colors.accent,
   },
   dots:{
   top: -17,

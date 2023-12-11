@@ -1,12 +1,14 @@
 'use strict';
-
+import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
+import { ColorSchemeContext } from '../components/colorSchemeContext';
+const { isDarkMode} = ColorSchemeContext;
 
-const background = '#ffffff';
-const color = "#080a05";
-const primary = "#334620";
-const secondary = "#d9e7cb";
-const accent = "#8fb668";
+var background = '#ffffff';
+var color = "#080a05";
+var primary = "#334620";
+var secondary = "#d9e7cb";
+var accent = "#709749";
 
 module.exports = StyleSheet.create({
     colors: {
