@@ -14,7 +14,6 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ColorSchemeProvider } from './components/colorSchemeContext';
 
 import Pointer from './assets/icons/pointer.svg'
 
@@ -38,7 +37,7 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-     <ColorSchemeProvider>
+
         <Header />
       <Stack.Navigator initialRouteName="HeatMap">
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
@@ -52,7 +51,6 @@ function App(): JSX.Element {
         <Stack.Screen name="HeatMap" component={Heatmap} options={{headerShown: false}}/>
       </Stack.Navigator>
         <Footer />
-        </ColorSchemeProvider>
     </NavigationContainer>
 
   );

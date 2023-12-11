@@ -18,12 +18,12 @@ import {
 import AButton from '../components/aButton'
 import { useNavigation } from '@react-navigation/native';
 const base = require('../assets/colors')
-import { ColorSchemeContext } from '../components/colorSchemeContext';
+
 
 export default function App() {
   const navigation = useNavigation();
   const [show, setShow] = React.useState(false);
-const { isDarkMode, toggleColorScheme } = useContext(ColorSchemeContext);
+
 
   const toggle = () => {
     setShow(!show);
@@ -37,20 +37,17 @@ const { isDarkMode, toggleColorScheme } = useContext(ColorSchemeContext);
     const toggleSettings = () => {
       setShowSettings(!showSettings);
     }
-  const textStyle = {
-    color: isDarkMode ? '#FFFFFF' : '#000000',
-  };
+
   return (
     <View style={[base.body, styles.container]}>
     <Text style={styles.title}>Accessibility Settings</Text>
     <Text/><Text/>
 
     <AButton
-         onPress={toggleColorScheme}
+         onPress={darkmode}
          title="Dark Mode"
          buttonStyle={{ width: 350, height: 50 }}
        />
-       <Text style={textStyle}>Working</Text>
     <Text/><Text/>
         <AButton
              onPress={darkmode}

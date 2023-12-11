@@ -1,8 +1,7 @@
 'use strict';
 import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
-import { ColorSchemeContext } from '../components/colorSchemeContext';
-const { isDarkMode} = ColorSchemeContext;
+
 
 var background = '#ffffff';
 var color = "#080a05";
