@@ -172,6 +172,11 @@ module.exports = StyleSheet.create({
       color: color
     },
 
+    'bold-14-white': {
+      fontSize: 12,
+      fontFamily: 'PTSans-Bold',
+      color: background
+    },
 
     'bold-11-white': {
       fontSize: 11,
