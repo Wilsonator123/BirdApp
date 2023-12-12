@@ -21,10 +21,11 @@ import Popup from '../components/popUp';
 import BirdFound from '../components/birdFound';
 import CameraIcon from '../assets/icons/bitCamera.svg';
 import Close from '../assets/icons/close.svg';
-const base = require('../assets/colors');
+
 
 
 export default function App() {
+const base = require('../assets/colors')();
   const { hasPermission, requestPermission } = useCameraPermission()
   const [showCamera, setShowCamera] = React.useState(false)
   const [birdFound, setBirdFound] = React.useState(false)
@@ -37,7 +38,32 @@ export default function App() {
   }
 
   const device = useCameraDevice('back')
-
+const styles = StyleSheet.create({
+  header: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    marginVertical: 10,
+  },
+  camera: {
+    position: 'relative',
+    width: 390,
+    height: 390,
+    backgroundColor: base.colors.primary,
+    borderRadius: 25,
+    margin: 10,
+    justifyContent: 'center',
+  },
+  circle: {
+    width: 130,
+    height: 130,
+    borderRadius: 100,
+    backgroundColor: base.colors.secondary,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
    if (device == null) return <NoCameraDeviceError />
   return (
     <View style={base.body}>
@@ -90,29 +116,3 @@ export default function App() {
   )
 }
 
-const styles = StyleSheet.create({
-  header: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    marginVertical: 10,
-  },
-  camera: {
-    position: 'relative',
-    width: 390,
-    height: 390,
-    backgroundColor: base.colors.primary,
-    borderRadius: 25,
-    margin: 10,
-    justifyContent: 'center',
-  },
-  circle: {
-    width: 130,
-    height: 130,
-    borderRadius: 100,
-    backgroundColor: base.colors.secondary,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

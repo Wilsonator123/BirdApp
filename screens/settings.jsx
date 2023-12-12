@@ -17,15 +17,23 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Settings from '../assets/icons/settings';
-const base = require("../assets/colors");
+
 
 export default function App() {
+const base = require("../assets/colors")();
   const navigation = useNavigation();
   const [show, setShow] = React.useState(false);
 
   const toggle = () => {
     setShow(!show);
   }
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: base.colors.primary,
+      padding: 10,
+    },
+  });
   return (
     <View style={[base.body, styles.container]}>
       <TouchableOpacity>
@@ -37,10 +45,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: base.colors.primary,
-    padding: 10,
-  },
-});

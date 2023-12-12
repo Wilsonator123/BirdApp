@@ -14,13 +14,15 @@ import {
   TouchableOpacity,
   ImageBackground,
   Button,
+  Appearance,
 } from 'react-native';
 import AButton from '../components/aButton'
 import { useNavigation } from '@react-navigation/native';
-const base = require('../assets/colors')
+
 
 
 export default function App() {
+const base = require('../assets/colors')()
   const navigation = useNavigation();
   const [show, setShow] = React.useState(false);
 
@@ -30,54 +32,16 @@ export default function App() {
   }
 
   const darkmode = () => {
-  }
+  console.log("Nonce",Appearance.getColorScheme())
+  Appearance.setColorScheme(Appearance.getColorScheme() === 'light' ? 'dark': 'light')
+
+   }
 
   const [showSettings, setShowSettings] = React.useState(false);
 
     const toggleSettings = () => {
       setShowSettings(!showSettings);
     }
-
-  return (
-    <View style={[base.body, styles.container]}>
-    <Text style={styles.title}>Accessibility Settings</Text>
-    <Text/><Text/>
-
-    <AButton
-         onPress={darkmode}
-         title="Dark Mode"
-         buttonStyle={{ width: 350, height: 50 }}
-       />
-    <Text/><Text/>
-        <AButton
-             onPress={darkmode}
-             title="Colour Pallet"
-             buttonStyle={{ width: 350, height: 50 }}
-           />
-
-    <Text/><Text/>
-        <AButton
-             onPress={darkmode}
-             title="Language"
-             buttonStyle={{ width: 350, height: 50 }}
-           />
-
-    <Text/><Text/>
-        <AButton
-             onPress={darkmode}
-             title="Font Size"
-             buttonStyle={{ width: 350, height: 50 }}
-           />
-    <Text/><Text/>
-        <AButton
-             onPress={darkmode}
-             title="Label Visibility"
-             buttonStyle={{ width: 350, height: 50 }}
-           />
-  </View>
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -160,3 +124,44 @@ const styles = StyleSheet.create({
     paddingVertical:0,
 },
 });
+console.log("asdas",base.colors)
+  return (
+    <View style={[base.body, styles.container]}>
+    <Text style={styles.title}>Accessibility Settings</Text>
+    <Text/><Text/>
+
+    <AButton
+         onPress={darkmode}
+         title="Dark Mode"
+         buttonStyle={{ width: 350, height: 50 }}
+       />
+    <Text/><Text/>
+        <AButton
+             onPress={darkmode}
+             title="Colour Pallet"
+             buttonStyle={{ width: 350, height: 50 }}
+           />
+
+    <Text/><Text/>
+        <AButton
+             onPress={darkmode}
+             title="Language"
+             buttonStyle={{ width: 350, height: 50 }}
+           />
+
+    <Text/><Text/>
+        <AButton
+             onPress={darkmode}
+             title="Font Size"
+             buttonStyle={{ width: 350, height: 50 }}
+           />
+    <Text/><Text/>
+        <AButton
+             onPress={darkmode}
+             title="Label Visibility"
+             buttonStyle={{ width: 350, height: 50 }}
+           />
+  </View>
+  );
+}
+

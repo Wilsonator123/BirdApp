@@ -15,10 +15,20 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-const base = require("../assets/colors");
+
 
 export default function App(){
-
+const base = require("../assets/colors")();
+const styles = StyleSheet.create({
+  main: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 10,
+  },
+  content: {
+    marginLeft: 50,
+  },
+});
   return (
       <View>
         <Text style={[base.title, {alignSelf: 'center', marginBottom: 10}]}>Bird Found!</Text>
@@ -36,13 +46,3 @@ export default function App(){
 
 }
 
-const styles = StyleSheet.create({
-  main: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: 10,
-  },
-  content: {
-    marginLeft: 50,
-  },
-});

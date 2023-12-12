@@ -1,15 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-const base = require('../assets/colors')
+
 
 const AButton = ({ onPress, title, buttonStyle }) => {
-  return (
-    <TouchableOpacity onPress={onPress} style={[styles.button, buttonStyle]}>
-      <Text style={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
-  );
-};
-
+const base = require('../assets/colors')()
 const styles = StyleSheet.create({
   button: {
     backgroundColor: base.colors.primary,
@@ -25,5 +19,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+console.log("buttonss",base.colors.primary)
+  return (
+
+    <TouchableOpacity onPress={onPress} style={[styles.button, buttonStyle]}>
+      <Text style={styles.buttonText}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
+
+
 
 export default AButton;

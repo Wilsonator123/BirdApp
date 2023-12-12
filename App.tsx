@@ -4,7 +4,7 @@
  *
  * @format
  */
-
+import {useColorScheme} from 'react-native';
 import React from 'react';
 import {
   SafeAreaView,
@@ -29,12 +29,11 @@ import Header from './components/header'
 import Heatmap from './screens/heatmap'
 import Accessability from './screens/accessability'
 
-const base = require('./colors')
 const Stack = createNativeStackNavigator();
 
 
 function App(): JSX.Element {
-
+const colorScheme = useColorScheme();
   return (
     <NavigationContainer>
 

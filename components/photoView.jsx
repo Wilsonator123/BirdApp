@@ -16,44 +16,11 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Pointer from '../assets/icons/pointer.svg';
-const base = require("../assets/colors");
+
 
 
 export default function App () {
-
-
-  return (
-    <View style={styles.container}>
-      <View style={styles.photo}>
-        <Image source={require('../assets/photos/photo1.png')} style={styles.image}/>
-      </View>
-      <View style={styles.caption}>
-        <View style={styles.type}>
-            <Text style={base['bold-18-white']}>Kingfisher</Text>
-        </View>
-        <Text style={base['bold-16-primary']}> Sat, 3 Nov 2023</Text>
-      </View>
-      <View style={styles.location}>
-        <Text style={base['bold-16-primary']}>Location</Text>
-        <View style={styles.mapView}>
-          <Image source={require('../assets/photos/map.png')} style={styles.image} />
-          <View style={styles.pointer}>
-            <Pointer />
-          </View>
-        </View>
-        <View style={styles.footer}>
-          <Text style={base['bold-11-black']}>Earlham </Text>
-          <Text style={base['regular-11-black']}>52.626, 1.235 </Text>
-        </View>
-      </View>
-
-
-    </View>
-
-
-  )
-}
-
+const base = require("../assets/colors")()
 const styles = StyleSheet.create({
   container: {
     width: 360,
@@ -102,3 +69,36 @@ const styles = StyleSheet.create({
     left: 120,
   },
 });
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.photo}>
+        <Image source={require('../assets/photos/photo1.png')} style={styles.image}/>
+      </View>
+      <View style={styles.caption}>
+        <View style={styles.type}>
+            <Text style={base['bold-18-white']}>Kingfisher</Text>
+        </View>
+        <Text style={base['bold-16-primary']}> Sat, 3 Nov 2023</Text>
+      </View>
+      <View style={styles.location}>
+        <Text style={base['bold-16-primary']}>Location</Text>
+        <View style={styles.mapView}>
+          <Image source={require('../assets/photos/map.png')} style={styles.image} />
+          <View style={styles.pointer}>
+            <Pointer />
+          </View>
+        </View>
+        <View style={styles.footer}>
+          <Text style={base['bold-11-black']}>Earlham </Text>
+          <Text style={base['regular-11-black']}>52.626, 1.235 </Text>
+        </View>
+      </View>
+
+
+    </View>
+
+
+  )
+}
+

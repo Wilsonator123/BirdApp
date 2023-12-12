@@ -28,9 +28,10 @@ import WestMidlands from '../assets/map/West Midlands';
 import York from '../assets/map/York';
 
 const mapData = require('../stubs/maps').maps;
-const base = require("../assets/colors");
+
 
 export default function App() {
+const base = require("../assets/colors")();
   const five = "#e93e3a";
   const four = "#ed683c";
   const three = "#f3903f";
@@ -46,7 +47,27 @@ export default function App() {
     setData(areaData);
     setShow(!show);
   };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    position: 'relative',
 
+  },
+
+  map: {
+    flex: 1,
+    resizeMode: "contain",
+    width: '100%',
+    height: '100%',
+  },
+
+  popup: {
+    padding: 10,
+    width: "100%",
+    height: "100%",
+  }
+
+});
   return (
 
     <View style={styles.container}>
@@ -136,24 +157,3 @@ export default function App() {
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    position: 'relative',
-
-  },
-
-  map: {
-    flex: 1,
-    resizeMode: "contain",
-    width: '100%',
-    height: '100%',
-  },
-
-  popup: {
-    padding: 10,
-    width: "100%",
-    height: "100%",
-  }
-
-});

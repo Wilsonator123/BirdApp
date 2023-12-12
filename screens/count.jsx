@@ -25,7 +25,7 @@ import Tick from '../assets/icons/tick';
 import BirdCounter from '../components/birdCounter';
 import Popup from '../components/popUp';
 
-const base = require("../assets/colors")
+
 const birds = require('../stubs/birds').birds;
 
 export default function App() {
@@ -44,7 +44,56 @@ export default function App() {
       return total+count
     })
   }
+const base = require("../assets/colors")()
+const styles = StyleSheet.create({
+    title: {
+        textAlign: "center",
+        marginTop: 30,
+        marginBottom: 30,
+    },
+    birdContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      flexWrap: 'wrap',
 
+    },
+    submit: {
+      marginTop: 20,
+      marginBottom: 20,
+      width: "87%",
+      alignSelf: 'center',
+    },
+
+    circle: {
+      width: 80,
+      height: 80,
+      borderRadius: 80/2,
+      backgroundColor: base.colors.primary,
+      marginTop: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
+
+});
+
+/*
+if(count === 0){
+      setBirdCounts(counts => {
+        const copy = {...counts}
+        delete copy[bird];
+        return copy
+      });
+    }
+    else{
+      setBirdCounts((prevCounts) => ({
+        ...prevCounts,
+        [bird]: count,
+      }));
+    }
+
+    */
   return (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <View style={base.body}>
@@ -103,52 +152,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-    title: {
-        textAlign: "center",
-        marginTop: 30,
-        marginBottom: 30,
-    },
-    birdContainer: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'space-evenly',
-      alignItems: 'center',
-      flexWrap: 'wrap',
 
-    },
-    submit: {
-      marginTop: 20,
-      marginBottom: 20,
-      width: "87%",
-      alignSelf: 'center',
-    },
-
-    circle: {
-      width: 80,
-      height: 80,
-      borderRadius: 80/2,
-      backgroundColor: base.colors.primary,
-      marginTop: 20,
-      justifyContent: 'center',
-      alignItems: 'center',
-    }
-
-});
-
-/*
-if(count === 0){
-      setBirdCounts(counts => {
-        const copy = {...counts}
-        delete copy[bird];
-        return copy
-      });
-    }
-    else{
-      setBirdCounts((prevCounts) => ({
-        ...prevCounts,
-        [bird]: count,
-      }));
-    }
-
-    */

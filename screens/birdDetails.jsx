@@ -18,71 +18,14 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import Back from "../assets/icons/back.svg";
 
-const base = require("../assets/colors");
+
 
 
 
 export default function App( {route} ) {
+const base = require("../assets/colors")();
   const navigator = useNavigation();
   const {bird} = route.params;
-
-  return (
-    <View style={styles.container}>
-      <View style={[base.bar,styles.header]}>
-        <View style={styles.breadcrumb}>
-          <TouchableOpacity onPress={() => navigator.goBack()}>
-              <Back
-              width="50"
-              height="33"
-              fill={base.colors.primary}
-              />
-          </TouchableOpacity>
-          <Text style={base['bold-18-primary']}>{bird.name}</Text>
-        </View>
-        <View>
-            <Image source={bird.img} style={styles.image}/>
-        </View>
-      </View>
-
-      <View style={styles.main}>
-        <Text style={styles.birdName}>{bird.name}</Text>
-        <Text style={styles.birdDesc}>{bird.description}</Text>
-        <View style={styles.grid}>
-        <View style={{flexDirection: "row", justifyContent: "space-evenly"}}>
-          <View style={styles.box}>
-            <Text style={styles.gridText}>Length</Text>
-            <Text style={styles.gridText}>{bird.length}</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.gridText}>Weight</Text>
-            <Text style={styles.gridText}>{bird.weight}</Text>
-          </View>
-        </View>
-        <View style={{flexDirection: "row", justifyContent: "space-evenly"}}>
-          <View style={styles.box}>
-            <Text style={styles.gridText}>Feathers</Text>
-            <View style={styles.feathers}>
-              {bird.feathers.map((feather) => (
-                <View key={feather} style={[styles.circle, {backgroundColor: feather}]}/>
-              ))}
-              </View>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.gridText}>Beak</Text>
-            <View style={styles.feathers}>
-            {bird.beak.map((beak) => (
-              <View key={beak} style={[styles.circle, {backgroundColor: beak}]}/>
-            ))}
-            </View>
-          </View>
-        </View>
-        </View>
-      </View>
-
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -178,3 +121,60 @@ const styles = StyleSheet.create({
   },
 
 })
+  return (
+    <View style={styles.container}>
+      <View style={[base.bar,styles.header]}>
+        <View style={styles.breadcrumb}>
+          <TouchableOpacity onPress={() => navigator.goBack()}>
+              <Back
+              width="50"
+              height="33"
+              fill={base.colors.primary}
+              />
+          </TouchableOpacity>
+          <Text style={base['bold-18-primary']}>{bird.name}</Text>
+        </View>
+        <View>
+            <Image source={bird.img} style={styles.image}/>
+        </View>
+      </View>
+
+      <View style={styles.main}>
+        <Text style={styles.birdName}>{bird.name}</Text>
+        <Text style={styles.birdDesc}>{bird.description}</Text>
+        <View style={styles.grid}>
+        <View style={{flexDirection: "row", justifyContent: "space-evenly"}}>
+          <View style={styles.box}>
+            <Text style={styles.gridText}>Length</Text>
+            <Text style={styles.gridText}>{bird.length}</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.gridText}>Weight</Text>
+            <Text style={styles.gridText}>{bird.weight}</Text>
+          </View>
+        </View>
+        <View style={{flexDirection: "row", justifyContent: "space-evenly"}}>
+          <View style={styles.box}>
+            <Text style={styles.gridText}>Feathers</Text>
+            <View style={styles.feathers}>
+              {bird.feathers.map((feather) => (
+                <View key={feather} style={[styles.circle, {backgroundColor: feather}]}/>
+              ))}
+              </View>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.gridText}>Beak</Text>
+            <View style={styles.feathers}>
+            {bird.beak.map((beak) => (
+              <View key={beak} style={[styles.circle, {backgroundColor: beak}]}/>
+            ))}
+            </View>
+          </View>
+        </View>
+        </View>
+      </View>
+
+    </View>
+  )
+}
+

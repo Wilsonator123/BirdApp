@@ -15,10 +15,33 @@ import {
   ImageBackground,
   Button,
 } from 'react-native';
-const base = require('../assets/colors');
+
 
 export default function App() {
+const base = require('../assets/colors')();
+const styles = StyleSheet.create({
+    mainBox: {
+      marginVertical: 5,
+      height: "65%",
+    },
+    subBox: {
+      height: "33%",
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      marginBottom: 5,
+      borderColor: 'red',
+    },
+    box:{
+      backgroundColor:base.colors.primary,
+      width:"48%",
+      height:"100%",
+    },
+    boxText:{
+      flex:1,
+      padding: 5,
+    }
 
+});
     return (
         <View style={base.container}>
             <View style={styles.mainBox}>
@@ -52,26 +75,3 @@ export default function App() {
 
 }
 
-const styles = StyleSheet.create({
-    mainBox: {
-      marginVertical: 5,
-      height: "65%",
-    },
-    subBox: {
-      height: "33%",
-      flexDirection: 'row',
-      justifyContent: 'space-evenly',
-      marginBottom: 5,
-      borderColor: 'red',
-    },
-    box:{
-      backgroundColor:base.colors.primary,
-      width:"48%",
-      height:"100%",
-    },
-    boxText:{
-      flex:1,
-      padding: 5,
-    }
-
-});

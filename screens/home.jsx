@@ -9,7 +9,7 @@ Text,
 import MapView, {Marker, Callout} from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
 const pointer = require('../assets/pointer1-0.png');
-const base = require('../assets/colors')
+
 
 
 function App(): JSX.Element {
@@ -27,7 +27,13 @@ function App(): JSX.Element {
         )
     }
 
-
+const base = require('../assets/colors')()
+const styles = StyleSheet.create({
+    map: {
+        flex: 1,
+        margin: 5,
+    },
+})
   return (
       <View style={base.body}>
             <View style={base.main}>
@@ -56,12 +62,7 @@ function App(): JSX.Element {
 }
 
 
-const styles = StyleSheet.create({
-    map: {
-        flex: 1,
-        margin: 5,
-    },
-})
+
 
 
 export default App;

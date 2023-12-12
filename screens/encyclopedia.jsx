@@ -17,13 +17,31 @@ import {
   FlatList,
 } from 'react-native';
 
-const base = require('../assets/colors');
+
 const birds = require('../stubs/birds').birds;
 import BirdCard from '../components/birdCard';
 import Filter from '../assets/icons/filter';
 
 
 export default function App() {
+const base = require('../assets/colors')();
+const styles = StyleSheet.create({
+  title: {
+    marginVertical: 10,
+    marginHorizontal: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  birdContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+
+  },
+});
   return (
     <View style={base.body}>
       <View style={styles.title}>
@@ -52,20 +70,3 @@ export default function App() {
 }
 
 
-const styles = StyleSheet.create({
-  title: {
-    marginVertical: 10,
-    marginHorizontal: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  birdContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-
-  },
-});

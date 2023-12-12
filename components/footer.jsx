@@ -5,12 +5,20 @@ import Ency from '../assets/icons/ency.svg'
 import News from '../assets/icons/news.svg'
 import Line from '../assets/icons/line.svg'
 import { useNavigation } from '@react-navigation/native';
-const base = require("../assets/colors")
+
 
 
 
 
 export default function Footer() {
+const base = require("../assets/colors")()
+const styles = StyleSheet.create({
+    footer: {
+        width:'100%',
+        height: 60,
+        justifyContent: 'space-evenly',
+    }
+})
     const navigation = useNavigation();
     return (
         <View style={[base.bar, styles.footer]}>
@@ -52,10 +60,3 @@ export default function Footer() {
     )
 }
 
-const styles = StyleSheet.create({
-    footer: {
-        width:'100%',
-        height: 60,
-        justifyContent: 'space-evenly',
-    }
-})

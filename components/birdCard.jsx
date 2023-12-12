@@ -15,26 +15,11 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-const base = require("../assets/colors")
+
 
 
 export default function App({bird}){
-  const navigator = useNavigation();
-    return (
-        <TouchableOpacity style={styles.container} onPress={
-        () => navigator.navigate("BirdDetails",
-        {bird: bird}
-        )
-        }>
-            <ImageBackground source={bird.img} style={styles.image}>
-                <View style={styles.textContainer}>
-                    <Text style={styles.text} >{bird.name}</Text>
-                </View>
-            </ImageBackground>
-        </TouchableOpacity>
-    )
-}
-
+const base = require("../assets/colors")()
 const styles = StyleSheet.create({
     container:{
         width: 175,
@@ -67,3 +52,19 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     }
 })
+  const navigator = useNavigation();
+    return (
+        <TouchableOpacity style={styles.container} onPress={
+        () => navigator.navigate("BirdDetails",
+        {bird: bird}
+        )
+        }>
+            <ImageBackground source={bird.img} style={styles.image}>
+                <View style={styles.textContainer}>
+                    <Text style={styles.text} >{bird.name}</Text>
+                </View>
+            </ImageBackground>
+        </TouchableOpacity>
+    )
+}
+
