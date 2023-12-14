@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   container: {
     width: 360,
     height: 500,
-    backgroundColor: base.colors.white,
+    backgroundColor: base.colors.accBackground,
   },
   Smallcontainer:{
     width: 360,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
    dottitle:{
    alignSelf: "center",
    fontSize:16,
-   color:"white",
+   color:base.colors.color,
    fontWeight: "bold",
    left:50,
    top: -17,
@@ -60,11 +60,11 @@ const styles = StyleSheet.create({
   title:{
   alignSelf: "center",
   fontSize:25,
-  color:"white",
+  color:base.colors.color,
   fontWeight: "bold",
   },
   type: {
-    backgroundColor: base.colors.primary,
+    backgroundColor: base.colors.accBox,
     marginLeft:-5,
     paddingHorizontal: 5,
   },

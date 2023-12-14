@@ -2,25 +2,33 @@ import {StyleSheet, Appearance} from 'react-native';
 
 module.exports = ()=>{
         const colourScheme = Appearance.getColorScheme();
-        console.log("colorrr",Appearance.getColorScheme());
+        //console.log("Colors current mode: ",Appearance.getColorScheme());
         let background;
         let color;
         let primary;
         let secondary;
         let accent;
+        let accBox;
+        let accBackground;
 
         if (colourScheme === "dark"){
-                background = '#000000';
-                color = "#080a05";
+                 background = '#000000'; //darkmode
+                 color = "#f8faf5";
                  primary = "#ccdfb9";
                  secondary = "#29371b";
                  accent = "#8fb668";
+                         accBox = "#334620";
+                    accBackground = "#1b2806"
+
         }else{
-                 background = '#ffffff';
-                 color = "#334620";
-                 primary = "#334620";
-                 secondary = "#d6e4c8";
-                 accent = "#709749";
+
+                                 background = '#ffffff'; //light mode is here cuz accessibility page is inversed so yolo
+                                 color = "#080a05";
+                                  primary = "#334620";
+                                  secondary = "#d6e4c8";
+                                  accent = "#709749";
+                                  accBox = "rgba(255,255,255,0.85)";
+                                  accBackground = "#709749"
         }
         return StyleSheet.create({
                    colors: {
@@ -29,12 +37,15 @@ module.exports = ()=>{
                        primary: primary,
                        secondary: secondary,
                        accent: accent,
+                       accBox: accBox,
+                       accBackground: accBackground,
                    },
                    body: {
                        flex:1,
                        fontFamily: 'Nunito-Regular',
                        backgroundColor: background,
                        width: '100%',
+
                    },
                    main: {
                        flex: 1,
@@ -78,13 +89,13 @@ module.exports = ()=>{
                    'bold-30-white': {
                        fontSize: 30.24,
                        fontFamily: 'Nunito-Bold',
-                       color: background
+                       color: color
                    },
 
                    'bold-50-white': {
                        fontSize: 53.92,
                        fontFamily: 'PTSans-Bold',
-                       color: background
+                       color: color
                    },
 
                    'bold-18-primary': {
@@ -126,13 +137,13 @@ module.exports = ()=>{
                    'bold-40-white': {
                        fontSize: 40.32,
                        fontFamily: 'PTSans-Bold',
-                       color: background
+                       color: color
                    },
 
                    'bold-20-white': {
                        fontSize: 22.72,
                        fontFamily: 'PTSans-Bold',
-                       color: background
+                       color: color
                    },
 
                    'bold-20-black': {
@@ -145,7 +156,7 @@ module.exports = ()=>{
                    'bold-18-white': {
                        fontSize: 17.12,
                        fontFamily: 'PTSans-Bold',
-                       color: background
+                       color: color
                    },
 
                    'bold-18-black': {
@@ -158,7 +169,7 @@ module.exports = ()=>{
                    'bold-16-white': {
                      fontSize: 16,
                      fontFamily: 'PTSans-Bold',
-                     color: background
+                     color: color
                    },
 
                    'bold-16-primary': {
@@ -190,7 +201,7 @@ module.exports = ()=>{
                    'bold-11-white': {
                      fontSize: 11,
                      fontFamily: 'Nunito-Bold',
-                     color: background
+                     color: color
                    },
 
 

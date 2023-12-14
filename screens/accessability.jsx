@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -22,37 +22,103 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function App() {
-const base = require('../assets/colors')()
-  const navigation = useNavigation();
-  const [show, setShow] = React.useState(false);
 
+const [colorPointer, setcolorPointer] = useState(0);
+        const backgroundPal = [['#ffffff','#2986cc','#ead1dc'],['#000000','#28AEC1','#C128AC']];
+        const colorPal = [["#080a05",'#a2c4c9','#c27ba0'],["#f8faf5",'#0AFB36','#FBC40A']];
+        const primaryPal = [["#334620",'#45818e','#741b47'],["#ccdfb9",'#ECE666','#66ECE8']];
+        const secondaryPal = [["#d6e4c8",'#134f5c','#f1c232'],["#29371b",'0D549B','#9B0D9B']];
+        const accentPal = [['#709749',"#8fb668",'#0c343d'],['#8fb668',"#CBB23E",'#11F2F9']];
+
+       /* if (colourScheme === "dark"){
+                background = '#ffffff'; //light mode is here cuz accessibility page is inversed so yolo
+                color = "#080a05";
+                 primary = "#334620";
+                 secondary = "#d6e4c8";
+                 accent = "#709749";
+        }else{
+                 background = '#000000';
+                 color = "#f8faf5";
+                 primary = "#ccdfb9";
+                 secondary = "#29371b";
+                 accent = "#8fb668";
+        }
+*/
+
+
+const [langPointer, setlangPointer] = useState(0);
+const Dmode = [['Dark Mode','Dunkler Modus','Tryb ciemny','Mode sombre'],['Light Mode','Lichtmodus','Tryb światła','Mode lumière']]
+const Cpallet = ['Colour Pallet','Farbpalette','Paleta kolorów','Palette de couleurs']
+const langList = ['Language','Sprache','Język','Langue']
+const fSize = ['Font Size','Schriftgröße','Rozmiar czcionki','Taille de police']
+const LVisibility = ['Label Visibility','Sichtbarkeit des Etiketts','Widoczność etykiety','Visibilité des étiquettes']
+
+const base = require('../assets/colors')()
+const navigation = useNavigation();
+const [show, setShow] = React.useState(false);
 
   const toggle = () => {
     setShow(!show);
   }
 
+const [isDarkmode, SetisDarkmodePointer] = useState(0);
+
   const darkmode = () => {
-  console.log("Nonce",Appearance.getColorScheme())
+  console.log("Darkmode: ",Appearance.getColorScheme())
   Appearance.setColorScheme(Appearance.getColorScheme() === 'light' ? 'dark': 'light')
+  SetisDarkmodePointer(Appearance.getColorScheme() === 'light' ? 1: 0)
 
    }
+    const colourPallet = () =>{
+    if (colorPointer < primaryPal[isDarkmode].length - 1){
+    setcolorPointer(colorPointer + 1)
+    }else{
+    setcolorPointer(0)
+    }
+    console.log("Colour Pointer Val: ",colorPointer)
+    }
 
+        const LangChanger = () =>{
+
+        if (langPointer < langList.length -1 ){
+        setlangPointer(langPointer + 1)
+        }else{
+        setlangPointer(0)
+        }
+            console.log("Lang Pointer Val: ",langPointer)
+        }
   const [showSettings, setShowSettings] = React.useState(false);
 
     const toggleSettings = () => {
       setShowSettings(!showSettings);
     }
+
+   const [fontSizesPointer, setfontSizes] = React.useState(0);
+
+   const fontSizeList = [35,40,45,50,25,30]
+                 console.log("fontSize: ",fontSizeList[fontSizesPointer])
+   const fontSizeChanger = () => {
+
+   if (fontSizesPointer < fontSizeList.length -1 ){
+           setfontSizes(fontSizesPointer + 1)
+           }else{
+           setfontSizes(0)
+           }
+
+           }
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.colors.accent,
+    backgroundColor: accentPal[isDarkmode][colorPointer],
     padding: 10,
 
-    borderColor:base.colors.accent,
+    borderColor:accentPal[isDarkmode][colorPointer],
     borderWidth: 7,
   },
   accButton: {
-  color: base.colors.accent,
+  color: accentPal[isDarkmode][colorPointer],
   },
 
   title:{
@@ -60,7 +126,7 @@ const styles = StyleSheet.create({
   fontSize:50,
   color:"white",
   fontWeight: "bold",
-  backgroundColor: base.colors.primary,
+  backgroundColor: primaryPal[isDarkmode][colorPointer],
   marginLeft:-5,
   paddingHorizontal:20,
   paddingVertical: 15,
@@ -77,7 +143,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 0.5,
     padding: 5,
-    borderColor: base.colors.color,
+    borderColor: colorPal[isDarkmode][colorPointer],
   },
 
   header: {
@@ -118,13 +184,12 @@ const styles = StyleSheet.create({
     bottom: 10,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: base.colors.secondary,
+    backgroundColor: secondaryPal[isDarkmode][colorPointer],
     borderBottomRightRadius: 15,
     borderTopRightRadius: 15,
     paddingVertical:0,
 },
 });
-console.log("asdas",base.colors)
   return (
     <View style={[base.body, styles.container]}>
     <Text style={styles.title}>Accessibility Settings</Text>
@@ -132,36 +197,40 @@ console.log("asdas",base.colors)
 
     <AButton
          onPress={darkmode}
-         title="Dark Mode"
-         buttonStyle={{ width: 350, height: 50 }}
+         title={Dmode[isDarkmode][langPointer]}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
        />
     <Text/><Text/>
         <AButton
-             onPress={darkmode}
-             title="Colour Pallet"
-             buttonStyle={{ width: 350, height: 50 }}
+             onPress={colourPallet}
+             title={Cpallet[langPointer] + " " + (colorPointer + 1)}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
 
     <Text/><Text/>
         <AButton
-             onPress={darkmode}
-             title="Language"
-             buttonStyle={{ width: 350, height: 50 }}
+             onPress={LangChanger}
+             title = {langList[langPointer]}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
 
     <Text/><Text/>
         <AButton
-             onPress={darkmode}
-             title="Font Size"
-             buttonStyle={{ width: 350, height: 50 }}
+             onPress={fontSizeChanger}
+             title={fSize[langPointer]}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
     <Text/><Text/>
         <AButton
              onPress={darkmode}
-             title="Label Visibility"
-             buttonStyle={{ width: 350, height: 50 }}
+             title={LVisibility[langPointer]}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
   </View>
   );
 }
-

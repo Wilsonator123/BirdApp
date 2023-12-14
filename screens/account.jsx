@@ -40,7 +40,7 @@ const base = require("../assets/colors")();
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.colors.primary,
+    backgroundColor: base.colors.accBackground,
     padding: 10,
   },
 
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   box: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    backgroundColor: 'rgba(255,255,255,0.85)',
+    backgroundColor: base.colors.accBox,
     marginVertical: 10,
   },
 
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
 
   upload: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(255,255,255,0.85)',
+    backgroundColor: base.colors.accBox,
     padding: 5,
     borderRadius: 5,
     alignItems: 'center',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
 
   month: {
-    backgroundColor: 'rgba(255,255,255,0.85)',
+    backgroundColor: base.colors.accBox,
     width: 90,
     marginTop: 25,
     marginBottom: 10,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     bottom: 10,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: base.colors.secondary,
+    backgroundColor: base.colors.accBox,
     borderBottomRightRadius: 15,
     borderTopRightRadius: 15,
     paddingVertical:0,

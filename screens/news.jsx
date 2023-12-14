@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
       borderColor: 'red',
     },
     box:{
-      backgroundColor:base.colors.primary,
+      backgroundColor:base.colors.accBackground,
       width:"48%",
       height:"100%",
     },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
 
 });
     return (
-        <View style={base.container}>
+        <View style={base.body}>
             <View style={styles.mainBox}>
                 <ImageBackground source={require('../assets/photos/mainNews.png')} style={{width: '100%', height: '100%'}}>
                     <View style={{flex: 1, justifyContent: 'flex-end', margin:15}}>

@@ -29,11 +29,11 @@ const base = require("../assets/colors")();
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.colors.primary,
+    backgroundColor: base.colors.accBackground,
     color: base.colors.background,
   },
   header: {
-    backgroundColor: "#fff",
+    backgroundColor: base.colors.secondary,
     height: 240,
     justifyContent: "center",
     alignItems: "center",

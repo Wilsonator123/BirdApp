@@ -41,13 +41,13 @@ const styles = StyleSheet.create({
         bottom: 10,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: base.colors.primary,
+        backgroundColor: base.colors.accent,
         borderBottomRightRadius: 15,
         borderTopRightRadius: 15,
         paddingVertical:0,
     },
     text:{
-        color: "white",
+        color: base.colors.color,
         fontSize: 14,
         fontWeight: "bold",
     }
