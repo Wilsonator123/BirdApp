@@ -20,15 +20,14 @@ import AButton from '../components/aButton'
 import { useNavigation } from '@react-navigation/native';
 
 
-
 export default function App() {
 
 const [colorPointer, setcolorPointer] = useState(0);
-        const backgroundPal = [['#ffffff','#2986cc','#ead1dc'],['#000000','#28AEC1','#C128AC']];
-        const colorPal = [["#080a05",'#a2c4c9','#c27ba0'],["#f8faf5",'#0AFB36','#FBC40A']];
-        const primaryPal = [["#334620",'#45818e','#741b47'],["#ccdfb9",'#ECE666','#66ECE8']];
-        const secondaryPal = [["#d6e4c8",'#134f5c','#f1c232'],["#29371b",'0D549B','#9B0D9B']];
-        const accentPal = [['#709749',"#8fb668",'#0c343d'],['#8fb668',"#CBB23E",'#11F2F9']];
+        const backgroundPal = [['#ffffff','#f9fbfb','#f5f8fb'],['#000000','#040606','#04080b']];
+        const colorPal = [["#080a05",'#060809','#060809'],["#f8faf5",'#f6f8f9','#f6f8f9']];
+        const primaryPal = [["#334620",'#6585a4','#579ab8'],["#ccdfb9",'#5b7a9a','#478aa9']];
+        const secondaryPal = [["#d6e4c8",'#aba3c8','#d8a3c1'],["#29371b",'#3f375c','#5d2846']];
+        const accentPal = [['#709749',"#9e8bbb",'#c9847e'],['#8fb668',"#574474",'#813c36']];
 
        /* if (colourScheme === "dark"){
                 background = '#ffffff'; //light mode is here cuz accessibility page is inversed so yolo
@@ -198,14 +197,14 @@ const styles = StyleSheet.create({
     <AButton
          onPress={darkmode}
          title={Dmode[isDarkmode][langPointer]}
-         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 15), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
          textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
        />
     <Text/><Text/>
         <AButton
              onPress={colourPallet}
              title={Cpallet[langPointer] + " " + (colorPointer + 1)}
-         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 15), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
          textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
 
@@ -213,7 +212,7 @@ const styles = StyleSheet.create({
         <AButton
              onPress={LangChanger}
              title = {langList[langPointer]}
-         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 15), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
          textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
 
@@ -221,14 +220,14 @@ const styles = StyleSheet.create({
         <AButton
              onPress={fontSizeChanger}
              title={fSize[langPointer]}
-         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 15), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
          textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
     <Text/><Text/>
         <AButton
              onPress={darkmode}
              title={LVisibility[langPointer]}
-         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 10), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
+         buttonStyle={{ width: 350, height: (fontSizeList[fontSizesPointer] + 15), backgroundColor: backgroundPal[isDarkmode][colorPointer]}}
          textStyle={{color: colorPal[isDarkmode][colorPointer], fontSize: fontSizeList[fontSizesPointer]}}
            />
   </View>

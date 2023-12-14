@@ -36,13 +36,7 @@ const styles = StyleSheet.create({
                 </View>
             </TouchableOpacity>
 
-            <View>
-                <Mail
-                    width="50"
-                    height="50"
-                    fill={base.colors.primary}
-                />
-            </View>
+
             <View>
             <TouchableOpacity onPress={()=> navigation.navigate('Accessability')}>
                             <Support
@@ -52,6 +46,13 @@ const styles = StyleSheet.create({
                             />
             </TouchableOpacity>
                         </View>
+                                    <View>
+                                        <Mail
+                                            width="50"
+                                            height="50"
+                                            fill={base.colors.primary}
+                                        />
+                                    </View>
         </View>
         )
 }
