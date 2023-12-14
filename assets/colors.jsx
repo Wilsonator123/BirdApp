@@ -110,6 +110,12 @@ module.exports = ()=>{
                        color: color
                    },
 
+                   'bold-16-white': {
+                         fontSize: 16,
+                         fontFamily: 'PTSans-Bold',
+                         color: 'white'
+                   },
+
                    'bold-16-black': {
                        fontSize: 16,
                        fontFamily: 'Nunito-Bold',
