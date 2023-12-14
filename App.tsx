@@ -28,7 +28,7 @@ import Footer from './components/footer'
 import Header from './components/header'
 import Heatmap from './screens/heatmap'
 import Accessability from './screens/accessability'
-
+import Notification from './screens/notification'
 const Stack = createNativeStackNavigator();
 
 
@@ -38,7 +38,7 @@ const colorScheme = useColorScheme();
     <NavigationContainer>
 
         <Header />
-      <Stack.Navigator initialRouteName="HeatMap">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Stack.Screen name="Count" component={Count} options={{headerShown: false}}/>
         <Stack.Screen name="Encyclopedia" component={Encyclopedia} options={{headerShown: false}}/>
@@ -48,6 +48,7 @@ const colorScheme = useColorScheme();
         <Stack.Screen name="Account" component={Account} options={{headerShown: false}}/>
         <Stack.Screen name="Accessability" component={Accessability} options={{headerShown: false}}/>
         <Stack.Screen name="HeatMap" component={Heatmap} options={{headerShown: false}}/>
+        <Stack.Screen name="Notification" component={Notification} options={{headerShown: false}}/>
       </Stack.Navigator>
         <Footer />
     </NavigationContainer>

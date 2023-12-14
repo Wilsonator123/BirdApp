@@ -45,14 +45,16 @@ const styles = StyleSheet.create({
                                 fill={base.colors.primary}
                             />
             </TouchableOpacity>
-                        </View>
-                                    <View>
-                                        <Mail
-                                            width="50"
-                                            height="50"
-                                            fill={base.colors.primary}
-                                        />
-                                    </View>
+              </View>
+                <View>
+                 <TouchableOpacity onPress={()=> navigation.navigate('Notification')}>
+                    <Mail
+                        width="50"
+                        height="50"
+                        fill={base.colors.primary}
+                    />
+                </TouchableOpacity>
+                </View>
         </View>
         )
 }

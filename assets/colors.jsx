@@ -22,13 +22,13 @@ module.exports = ()=>{
 
         }else{
 
-                                 background = '#ffffff'; //light mode is here cuz accessibility page is inversed so yolo
-                                 color = "#080a05";
-                                  primary = "#334620";
-                                  secondary = "#d6e4c8";
-                                  accent = "#709749";
-                                  accBox = "rgba(255,255,255,0.85)";
-                                  accBackground = "#709749"
+           background = '#ffffff'; //light mode is here cuz accessibility page is inversed so yolo
+           color = "#080a05";
+            primary = "#334620";
+            secondary = "#d6e4c8";
+            accent = "#709749";
+            accBox = "rgba(255,255,255,0.85)";
+            accBackground = "#709749"
         }
         return StyleSheet.create({
                    colors: {
@@ -111,7 +111,7 @@ module.exports = ()=>{
                    },
 
                    'bold-16-white': {
-                         fontSize: 16,
+                         fontSize: 14,
                          fontFamily: 'PTSans-Bold',
                          color: 'white'
                    },

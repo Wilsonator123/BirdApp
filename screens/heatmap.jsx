@@ -16,7 +16,7 @@ import {
   Button
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import Back from '../assets/icons/back';
 import Popup from '../components/popUp';
 import EastAnglia from '../assets/map/East Anglia';
 import EastMidlands from '../assets/map/East Midlands';
@@ -31,6 +31,7 @@ const mapData = require('../stubs/maps').maps;
 
 
 export default function App() {
+  const navigation = useNavigation();
 const base = require("../assets/colors")();
   const five = "#e93e3a";
   const four = "#ed683c";
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
   return (
 
     <View style={styles.container}>
+    <Back width="30" height="30" style={{position: 'absolute', zIndex: 2}} onPress={() => navigation.navigate("Home")}/>
     <View style={{marginLeft: -100, width:500, height: 600}}>
       <ImageBackground source={require('../assets/map/map.png')} style={styles.map}>
 
