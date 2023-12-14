@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
 
       <TouchableWithoutFeedback onPress={(e) => togglePopup('eastMidlands', e.nativeEvent)}>
       <View style={{position: 'absolute', bottom:145, right: 50, justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={[base['bold-14-black'], {position: 'absolute', zIndex: 2, width: 50, textAlign: 'center', paddingBottom: 20}]}>East Midlands</Text>
+        <Text style={[base['bold-14-black'], {position: 'absolute', zIndex: 2, width: 70, textAlign: 'center', paddingBottom: 20}]}>East Midlands</Text>
         <EastMidlands width="120" height="120" fill={four} style={{zIndex: 1}}/>
       </View>
       </TouchableWithoutFeedback>
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 
       <TouchableWithoutFeedback onPress={(e) => togglePopup('westMidlands', e.nativeEvent)}>
       <View style={{position: 'absolute', bottom:130, left: 286, justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={[base['bold-14-black'], {position: 'absolute', zIndex: 2, width: 50, textAlign:'center'}]}>West Midlands</Text>
+        <Text style={[base['bold-14-black'], {position: 'absolute', zIndex: 2, width: 70, textAlign:'center'}]}>West Midlands</Text>
         <WestMidlands width="100" height="100" fill={two} style={{zIndex: 1}}/>
       </View>
       </TouchableWithoutFeedback>
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
       <Popup
         data={data}
         close={() => setShow(false)}
-        customStyles={{position: 'absolute', top: data.location[1], left: data.location[0], width: 250, height: 185}}
+        customStyles={{position: 'absolute', top: data.location[1], left: data.location[0], width: 250, height: 200}}
       >
         <View style={styles.popup}>
           <Text style={[base['bold-20-black'], {paddingBottom: 10, textDecorationLine: 'underline'}]}>{data.name}</Text>
